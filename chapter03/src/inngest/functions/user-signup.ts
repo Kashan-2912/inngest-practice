@@ -10,7 +10,7 @@ export const sendWelcomeEmail = inngest.createFunction(
 
   // handler
   async ({ event, step }) => {
-    const { email, name, plan } = event.data;
+    const { email, name, plan } = event.data as { email: string; name: string; plan: "free" | "pro" | "enterprise" };
 
     console.log(`\n${"=".repeat(50)}`);
     console.log(`📧 WELCOME EMAIL WORKFLOW STARTED`);
